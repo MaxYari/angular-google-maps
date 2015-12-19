@@ -3983,6 +3983,7 @@ Original idea from: http://stackoverflow.com/questions/22758950/google-map-drawi
                 templateScope = _this.scope.$new();
                 if (angular.isDefined(_this.scope.templateParameter)) {
                   templateScope.parameter = _this.scope.templateParameter;
+                  angular.extend(templateScope, _this.scope.templateParameter);
                 }
                 compiled = $compile(content.data)(templateScope);
                 _this.gObject.setContent(compiled[0]);
