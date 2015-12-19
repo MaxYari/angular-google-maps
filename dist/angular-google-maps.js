@@ -4896,8 +4896,8 @@ Original idea from: http://stackoverflow.com/questions/22758950/google-map-drawi
           }
           this.scope.$watch('models', (function(_this) {
             return function(newValue, oldValue) {
-              if (!_.isEqual(newValue, oldValue) || !_this.modelsRendered) {
-                if (newValue.length === 0 && oldValue.length === 0) {
+              if (newValue && (!_.isEqual(newValue, oldValue) || !_this.modelsRendered)) {
+                if (oldValue && (newValue.length === 0 && oldValue.length === 0)) {
                   return;
                 }
                 _this.modelsRendered = true;
